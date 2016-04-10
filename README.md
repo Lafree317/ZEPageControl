@@ -1,5 +1,5 @@
 # ZEPageControl
-iOS-PageControl-仿知乎小圆桌
+
 ![](http://upload-images.jianshu.io/upload_images/1298596-6a298bd98ca1bae8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出
