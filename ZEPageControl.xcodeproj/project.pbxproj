@@ -14,7 +14,7 @@
 		52AB2F0D1CBA4F28000F8B29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AB2F0B1CBA4F28000F8B29 /* LaunchScreen.storyboard */; };
 		52AB2F211CBA4F4B000F8B29 /* ZEPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F161CBA4F4B000F8B29 /* ZEPageViewController.swift */; };
 		52AB2F221CBA4F4B000F8B29 /* ZETableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F171CBA4F4B000F8B29 /* ZETableViewController.swift */; };
-		52AB2F231CBA4F4B000F8B29 /* ZEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F191CBA4F4B000F8B29 /* ZEModel.swift */; };
+		52AB2F231CBA4F4B000F8B29 /* ZEMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F191CBA4F4B000F8B29 /* ZEMacro.swift */; };
 		52AB2F241CBA4F4B000F8B29 /* ZEPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F1A1CBA4F4B000F8B29 /* ZEPageModel.swift */; };
 		52AB2F251CBA4F4B000F8B29 /* ZECell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F1C1CBA4F4B000F8B29 /* ZECell.swift */; };
 		52AB2F261CBA4F4B000F8B29 /* ZECell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB2F1D1CBA4F4B000F8B29 /* ZECell.xib */; };
@@ -33,7 +33,7 @@
 		52AB2F0E1CBA4F28000F8B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52AB2F161CBA4F4B000F8B29 /* ZEPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEPageViewController.swift; sourceTree = "<group>"; };
 		52AB2F171CBA4F4B000F8B29 /* ZETableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZETableViewController.swift; sourceTree = "<group>"; };
-		52AB2F191CBA4F4B000F8B29 /* ZEModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEModel.swift; sourceTree = "<group>"; };
+		52AB2F191CBA4F4B000F8B29 /* ZEMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZEMacro.swift; path = Model/ZEMacro.swift; sourceTree = "<group>"; };
 		52AB2F1A1CBA4F4B000F8B29 /* ZEPageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEPageModel.swift; sourceTree = "<group>"; };
 		52AB2F1C1CBA4F4B000F8B29 /* ZECell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZECell.swift; sourceTree = "<group>"; };
 		52AB2F1D1CBA4F4B000F8B29 /* ZECell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZECell.xib; sourceTree = "<group>"; };
@@ -86,6 +86,7 @@
 		52AB2F141CBA4F4B000F8B29 /* ZEPage */ = {
 			isa = PBXGroup;
 			children = (
+				52AB2F191CBA4F4B000F8B29 /* ZEMacro.swift */,
 				52AB2F151CBA4F4B000F8B29 /* Controller */,
 				52AB2F181CBA4F4B000F8B29 /* Model */,
 				52AB2F1B1CBA4F4B000F8B29 /* View */,
@@ -106,7 +107,6 @@
 		52AB2F181CBA4F4B000F8B29 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				52AB2F191CBA4F4B000F8B29 /* ZEModel.swift */,
 				52AB2F1A1CBA4F4B000F8B29 /* ZEPageModel.swift */,
 			);
 			path = Model;
@@ -200,7 +200,7 @@
 				52AB2F271CBA4F4B000F8B29 /* ZEHeaderView.swift in Sources */,
 				52AB2F221CBA4F4B000F8B29 /* ZETableViewController.swift in Sources */,
 				52AB2F051CBA4F28000F8B29 /* ViewController.swift in Sources */,
-				52AB2F231CBA4F4B000F8B29 /* ZEModel.swift in Sources */,
+				52AB2F231CBA4F4B000F8B29 /* ZEMacro.swift in Sources */,
 				52AB2F251CBA4F4B000F8B29 /* ZECell.swift in Sources */,
 				52AB2F031CBA4F28000F8B29 /* AppDelegate.swift in Sources */,
 				52AB2F211CBA4F4B000F8B29 /* ZEPageViewController.swift in Sources */,

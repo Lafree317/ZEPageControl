@@ -9,8 +9,9 @@
 import UIKit
 
 class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewControllerDelegate,ZEMenuViewDelegate {
+    
     var titlesArr:Array<String>!
-    var backGroundScrollView:UIScrollView?
+    var backgroundScrollView:UIScrollView?
     var tableViewArr:Array<ZETableViewController> = []
     var showingTableView:UITableView?
     var menuView:ZEMenuView!
@@ -22,82 +23,114 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        self.backGroundScrollView = UIScrollView(frame: self.view.frame)
-        self.backGroundScrollView?.pagingEnabled = true
-        self.backGroundScrollView?.bounces = false
-        self.backGroundScrollView?.delegate = self
+        layoutBackgroundScrollView()
+        layoutHeaderMenuView()
+    }
+    /** 创建底部scrollView,并将tableViewController添加到上面 */
+    func layoutBackgroundScrollView(){
         
+        self.backgroundScrollView = UIScrollView(frame: self.view.frame)
+        self.backgroundScrollView?.pagingEnabled = true
+        self.backgroundScrollView?.bounces = false
+        self.backgroundScrollView?.delegate = self
         let floatArrCount = CGFloat(titlesArr.count)
-        self.backGroundScrollView?.contentSize = CGSizeMake(floatArrCount*kZEScreenWidth,self.view.frame.size.height-64)
-        // tableView自己持有的偏移量和赋值时给的偏移量符号是相反的
-        scrollY = -kScrollHorizY
+        self.backgroundScrollView?.contentSize = CGSizeMake(floatArrCount*kZEScreenWidth,self.view.frame.size.height-kNavigationHight)
+        
+        // 给scrollY赋初值避免一上来滑动就乱
+        scrollY = -kScrollHorizY // tableView自己持有的偏移量和赋值时给的偏移量符号是相反的
         for  i in 0 ..< titlesArr.count  {
             let floatI = CGFloat(i)
             
             let tableViewVC = ZETableViewController(style: UITableViewStyle.Plain)
+            // tableView顶部流出HeaderView和MenuView的位置
             tableViewVC.tableView.contentInset = UIEdgeInsetsMake(kScrollHorizY, 0, 0, 0 )
             tableViewVC.delegate = self
-            tableViewVC.view.frame = CGRectMake(floatI * kZEScreenWidth,0, self.view.frame.size.width, self.view.frame.size.height-64)
+            tableViewVC.view.frame = CGRectMake(floatI * kZEScreenWidth,0, self.view.frame.size.width, self.view.frame.size.height-kNavigationHight)
             tableViewVC.tags = titlesArr[i]
             
+            // 将tableViewVC添加进数组方便管理
             tableViewArr.append(tableViewVC)
             self.addChildViewController(tableViewVC)
         }
-        backGroundScrollView?.addSubview(tableViewArr[0].view)
-        self.view .addSubview(backGroundScrollView!)
-        
+        // 需要用到的时候再添加到view上,避免一上来就占用太多资源
+        backgroundScrollView?.addSubview(tableViewArr[0].view)
+        self.view.addSubview(backgroundScrollView!)
+    }
+    /** 创建HeaderView和MenuView */
+    func layoutHeaderMenuView(){
+        // 通过Xib导入headerView
         headerView = NSBundle.mainBundle().loadNibNamed("ZEHeaderView", owner: self, options: nil).first as! ZEHeaderView
-        headerView.frame = CGRectMake(0, 64, kZEScreenWidth, kZEHeaderHight)
+        headerView.frame = CGRectMake(0, kNavigationHight, kZEScreenWidth, kZEHeaderHight)
         self.view .addSubview(headerView)
         
-        menuView = ZEMenuView(frame:CGRectMake(0,kZEHeaderHight+64,kZEScreenWidth,kZEMenuHight))
+        // MenuView
+        menuView = ZEMenuView(frame:CGRectMake(0,CGRectGetMaxY(headerView.frame),kZEScreenWidth,kZEMenuHight))
         menuView.delegate = self
         menuView.setUIWithArr(titlesArr)
         self.view .addSubview(self.menuView)
     }
+    /** 因为频繁用到header和menu的固定,所以声明一个方法用于偷懒 */
     func headerMenuViewShowType(showType:headerMenuShowType){
         switch showType {
         case .up:
-            menuView.frame.origin.y = 64
-            headerView.frame.origin.y = 64-kZEHeaderHight
+            menuView.frame.origin.y = kNavigationHight
+            headerView.frame.origin.y = kNavigationHight-kZEHeaderHight
             break
         case .buttom:
-            headerView.frame.origin.y = 64
+            headerView.frame.origin.y = kNavigationHight
             menuView.frame.origin.y = CGRectGetMaxY(headerView.frame)
             break
         }
     }
-    func menuViewSelectIndex(index: Int) {
-        UIView.animateWithDuration(0.3) { 
-            self.backGroundScrollView?.contentOffset = CGPointMake(kZEScreenWidth*CGFloat(index),-64)
-        }
-    }
+    
+    // MARK:DELEGATE
     func tableViewDidScrollPassY(tableviewScrollY: CGFloat) {
-        let  seleoffSetY = tableviewScrollY - scrollY
+        // 计算每次改变的值
+        let seleoffSetY = tableviewScrollY - scrollY
+        // 将scrollY的值同步
         scrollY = tableviewScrollY
+        
+        // 偏移量超出Navigation之上
         if scrollY >= -kZEMenuHight {
             headerMenuViewShowType(.up)
         }else if  scrollY <= -kScrollHorizY {
+            // 偏移量超出Navigation之下
             headerMenuViewShowType(.buttom)
         }else{
+            // 剩下的只有需要跟随的情况了
+            // 将headerView的y值按照偏移量更改
             headerView.frame.origin.y -= seleoffSetY
             menuView.frame.origin.y = CGRectGetMaxY(headerView.frame)
         }
     }
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollX != scrollView.contentOffset.x{
-            if scrollY >= -kZEMenuHight {
-                scrollY = -kZEMenuHight
-            }
-            for tableViewVC in tableViewArr {
-                tableViewVC.tableView.contentOffset = CGPointMake(0, scrollY)
-            }
-            
-            let rate = (scrollView.contentOffset.x/kZEScreenWidth)
-            backGroundScrollView?.addSubview(tableViewArr[Int(rate+0.5)].view)
-            self.menuView.scrollToRate(rate)
-            
+    func menuViewSelectIndex(index: Int) {
+        // 0.3秒的动画为了显得不太突兀
+        UIView.animateWithDuration(0.3) {
+            self.backgroundScrollView?.contentOffset = CGPointMake(kZEScreenWidth*CGFloat(index),-kNavigationHight)
         }
+    }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        // 判断是否有X变动,这里只处理横向滑动
+        if scrollX == scrollView.contentOffset.x{
+            return;
+        }
+        // 当tableview滑动到很靠上的时候,下一个tableview出现时只用在menuView之下
+        if scrollY >= -kZEMenuHight {
+            scrollY = -kZEMenuHight
+        }
+        
+        for tableViewVC in tableViewArr {
+            tableViewVC.tableView.contentOffset = CGPointMake(0, scrollY)
+        }
+        
+        // 用于改变menuView的状态
+        let rate = (scrollView.contentOffset.x/kZEScreenWidth)
+        self.menuView.scrollToRate(rate)
+        
+        // +0.7的意思是 当滑动到30%的时候加载下一个tableView
+        backgroundScrollView?.addSubview(tableViewArr[Int(rate+0.7)].view)
+        
+        // 记录x
         scrollX = scrollView.contentOffset.x
     }
     override func didReceiveMemoryWarning() {

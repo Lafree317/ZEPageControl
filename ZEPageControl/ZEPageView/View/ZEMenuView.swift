@@ -8,6 +8,8 @@
 
 import UIKit
 
+let kZEButtonWidth:CGFloat = 75
+
 protocol ZEMenuViewDelegate {
     func menuViewSelectIndex(index:Int)
 }
