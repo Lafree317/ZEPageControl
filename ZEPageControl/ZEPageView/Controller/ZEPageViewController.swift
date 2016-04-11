@@ -1,10 +1,5 @@
-//
-//  ZEViewController.swift
-//  ZEPageView
-//
-//  Created by 胡春源 on 16/3/16.
-//  Copyright © 2016年 胡春源. All rights reserved.
-//
+// 简书:http://www.jianshu.com/p/1523c6bd3253
+// github:https://github.com/Lafree317/ZEPageControl
 
 import UIKit
 
@@ -19,17 +14,21 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
     var scrollY:CGFloat = 0
     var scrollX:CGFloat = 0
     
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.hidden = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
         layoutBackgroundScrollView()
         layoutHeaderMenuView()
+        
     }
     /** 创建底部scrollView,并将tableViewController添加到上面 */
     func layoutBackgroundScrollView(){
-        
-        self.backgroundScrollView = UIScrollView(frame: self.view.frame)
+        // 需要创建到高度0上,所以backgroundScrollView.y要等于-64
+        self.backgroundScrollView = UIScrollView(frame:CGRectMake(0,-kNavigationHight,kZEScreenWidth,kZEScreenHight+kNavigationHight))
         self.backgroundScrollView?.pagingEnabled = true
         self.backgroundScrollView?.bounces = false
         self.backgroundScrollView?.delegate = self
@@ -45,7 +44,7 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
             // tableView顶部流出HeaderView和MenuView的位置
             tableViewVC.tableView.contentInset = UIEdgeInsetsMake(kScrollHorizY, 0, 0, 0 )
             tableViewVC.delegate = self
-            tableViewVC.view.frame = CGRectMake(floatI * kZEScreenWidth,0, self.view.frame.size.width, self.view.frame.size.height-kNavigationHight)
+            tableViewVC.view.frame = CGRectMake(floatI * kZEScreenWidth,0, self.view.frame.size.width, kZEScreenHight)
             tableViewVC.tags = titlesArr[i]
             
             // 将tableViewVC添加进数组方便管理
@@ -60,24 +59,24 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
     func layoutHeaderMenuView(){
         // 通过Xib导入headerView
         headerView = NSBundle.mainBundle().loadNibNamed("ZEHeaderView", owner: self, options: nil).first as! ZEHeaderView
-        headerView.frame = CGRectMake(0, kNavigationHight, kZEScreenWidth, kZEHeaderHight)
-        self.view .addSubview(headerView)
+        headerView.frame = CGRectMake(0, 0, kZEScreenWidth, kZEHeaderHight)
+        self.view.addSubview(headerView)
         
         // MenuView
         menuView = ZEMenuView(frame:CGRectMake(0,CGRectGetMaxY(headerView.frame),kZEScreenWidth,kZEMenuHight))
         menuView.delegate = self
         menuView.setUIWithArr(titlesArr)
-        self.view .addSubview(self.menuView)
+        self.view.addSubview(self.menuView)
     }
     /** 因为频繁用到header和menu的固定,所以声明一个方法用于偷懒 */
     func headerMenuViewShowType(showType:headerMenuShowType){
         switch showType {
         case .up:
             menuView.frame.origin.y = kNavigationHight
-            headerView.frame.origin.y = kNavigationHight-kZEHeaderHight
+            headerView.frame.origin.y = -kZEHeaderHight+64
             break
         case .buttom:
-            headerView.frame.origin.y = kNavigationHight
+            headerView.frame.origin.y = 0
             menuView.frame.origin.y = CGRectGetMaxY(headerView.frame)
             break
         }
@@ -89,11 +88,13 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
         let seleoffSetY = tableviewScrollY - scrollY
         // 将scrollY的值同步
         scrollY = tableviewScrollY
-        
+        print(scrollY)
         // 偏移量超出Navigation之上
-        if scrollY >= -kZEMenuHight {
+        if scrollY >= -kZEMenuHight-kNavigationHight {
+            self.navigationController?.navigationBar.hidden = false
             headerMenuViewShowType(.up)
         }else if  scrollY <= -kScrollHorizY {
+            self.navigationController?.navigationBar.hidden = true
             // 偏移量超出Navigation之下
             headerMenuViewShowType(.buttom)
         }else{
@@ -102,6 +103,7 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
             headerView.frame.origin.y -= seleoffSetY
             menuView.frame.origin.y = CGRectGetMaxY(headerView.frame)
         }
+        
     }
     func menuViewSelectIndex(index: Int) {
         // 0.3秒的动画为了显得不太突兀
@@ -115,8 +117,8 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
             return;
         }
         // 当tableview滑动到很靠上的时候,下一个tableview出现时只用在menuView之下
-        if scrollY >= -kZEMenuHight {
-            scrollY = -kZEMenuHight
+        if scrollY >= -kZEMenuHight-kNavigationHight {
+            scrollY = -kZEMenuHight-kNavigationHight
         }
         
         for tableViewVC in tableViewArr {

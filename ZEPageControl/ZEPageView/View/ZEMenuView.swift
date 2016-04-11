@@ -1,10 +1,5 @@
-//
-//  ZEMenuView.swift
-//  ZEPageView
-//
-//  Created by 胡春源 on 16/3/16.
-//  Copyright © 2016年 胡春源. All rights reserved.
-//
+// 简书:http://www.jianshu.com/p/1523c6bd3253
+// github:https://github.com/Lafree317/ZEPageControl
 
 import UIKit
 
@@ -21,7 +16,7 @@ class ZEMenuView: UIView {
     var margin:CGFloat!
     var delegate:ZEMenuViewDelegate?
     func setUIWithArr(titleArr:Array<String>){
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.init(red: 250/255.0, green: 250/255.0, blue: 250/255.0, alpha: 1)
         self.titleArr = titleArr
         margin = (kZEScreenWidth - (CGFloat(titleArr.count) * kZEButtonWidth)) / CGFloat(titleArr.count+1)
         for i in 0 ..< titleArr.count  {
@@ -29,7 +24,8 @@ class ZEMenuView: UIView {
             
             let button = UIButton(type: UIButtonType.Custom)
             let buttonX = margin*(floatI+1)+floatI*kZEButtonWidth
-            button.frame = CGRectMake(buttonX, 0, kZEButtonWidth,50)
+            
+            button.frame = CGRectMake(buttonX, 0, kZEButtonWidth,kZEMenuHight)
             
             let title = titleArr[i]
             button.setTitle(title, forState: .Normal)
@@ -40,15 +36,20 @@ class ZEMenuView: UIView {
             self.addSubview(button)
         }
         buttonSelectIndex(0)
-        lineView = UIView(frame: CGRectMake(margin,self.frame.size.height-2,kZEButtonWidth,2))
-        lineView?.backgroundColor = UIColor.blueColor()
-        self.addSubview(lineView!)
         
         
         // 分割线..没啥用
         let line = UIView(frame: CGRectMake(0,self.frame.height-1,kZEScreenWidth,1))
         line.backgroundColor = UIColor.groupTableViewBackgroundColor()
         self.addSubview(line)
+        
+        
+        lineView = UIView(frame: CGRectMake(margin,self.frame.size.height-2,kZEButtonWidth,2))
+        lineView?.backgroundColor = COLOR_BUTTON_SELECT
+        self.addSubview(lineView!)
+        
+        
+       
     }
     func buttonClick(button:UIButton){
         let index = buttonArr.indexOf(button)

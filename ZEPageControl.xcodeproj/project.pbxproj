@@ -7,23 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524131DB1CBBF73B00D703A6 /* ZEPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524131D01CBBF73B00D703A6 /* ZEPageViewController.swift */; };
+		524131DC1CBBF73B00D703A6 /* ZETableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524131D11CBBF73B00D703A6 /* ZETableViewController.swift */; };
+		524131DD1CBBF73B00D703A6 /* ZEMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524131D31CBBF73B00D703A6 /* ZEMacro.swift */; };
+		524131DE1CBBF73B00D703A6 /* ZEPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524131D41CBBF73B00D703A6 /* ZEPageModel.swift */; };
+		524131DF1CBBF73B00D703A6 /* ZECell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524131D61CBBF73B00D703A6 /* ZECell.swift */; };
+		524131E01CBBF73B00D703A6 /* ZECell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524131D71CBBF73B00D703A6 /* ZECell.xib */; };
+		524131E11CBBF73B00D703A6 /* ZEHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524131D81CBBF73B00D703A6 /* ZEHeaderView.swift */; };
+		524131E21CBBF73B00D703A6 /* ZEHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524131D91CBBF73B00D703A6 /* ZEHeaderView.xib */; };
+		524131E31CBBF73B00D703A6 /* ZEMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524131DA1CBBF73B00D703A6 /* ZEMenuView.swift */; };
 		52AB2F031CBA4F28000F8B29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F021CBA4F28000F8B29 /* AppDelegate.swift */; };
 		52AB2F051CBA4F28000F8B29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F041CBA4F28000F8B29 /* ViewController.swift */; };
 		52AB2F081CBA4F28000F8B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AB2F061CBA4F28000F8B29 /* Main.storyboard */; };
 		52AB2F0A1CBA4F28000F8B29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AB2F091CBA4F28000F8B29 /* Assets.xcassets */; };
 		52AB2F0D1CBA4F28000F8B29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AB2F0B1CBA4F28000F8B29 /* LaunchScreen.storyboard */; };
-		52AB2F211CBA4F4B000F8B29 /* ZEPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F161CBA4F4B000F8B29 /* ZEPageViewController.swift */; };
-		52AB2F221CBA4F4B000F8B29 /* ZETableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F171CBA4F4B000F8B29 /* ZETableViewController.swift */; };
-		52AB2F231CBA4F4B000F8B29 /* ZEMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F191CBA4F4B000F8B29 /* ZEMacro.swift */; };
-		52AB2F241CBA4F4B000F8B29 /* ZEPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F1A1CBA4F4B000F8B29 /* ZEPageModel.swift */; };
-		52AB2F251CBA4F4B000F8B29 /* ZECell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F1C1CBA4F4B000F8B29 /* ZECell.swift */; };
-		52AB2F261CBA4F4B000F8B29 /* ZECell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB2F1D1CBA4F4B000F8B29 /* ZECell.xib */; };
-		52AB2F271CBA4F4B000F8B29 /* ZEHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F1E1CBA4F4B000F8B29 /* ZEHeaderView.swift */; };
-		52AB2F281CBA4F4B000F8B29 /* ZEHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB2F1F1CBA4F4B000F8B29 /* ZEHeaderView.xib */; };
-		52AB2F291CBA4F4B000F8B29 /* ZEMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB2F201CBA4F4B000F8B29 /* ZEMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		524131D01CBBF73B00D703A6 /* ZEPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEPageViewController.swift; sourceTree = "<group>"; };
+		524131D11CBBF73B00D703A6 /* ZETableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZETableViewController.swift; sourceTree = "<group>"; };
+		524131D31CBBF73B00D703A6 /* ZEMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEMacro.swift; sourceTree = "<group>"; };
+		524131D41CBBF73B00D703A6 /* ZEPageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEPageModel.swift; sourceTree = "<group>"; };
+		524131D61CBBF73B00D703A6 /* ZECell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZECell.swift; sourceTree = "<group>"; };
+		524131D71CBBF73B00D703A6 /* ZECell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZECell.xib; sourceTree = "<group>"; };
+		524131D81CBBF73B00D703A6 /* ZEHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEHeaderView.swift; sourceTree = "<group>"; };
+		524131D91CBBF73B00D703A6 /* ZEHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZEHeaderView.xib; sourceTree = "<group>"; };
+		524131DA1CBBF73B00D703A6 /* ZEMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEMenuView.swift; sourceTree = "<group>"; };
 		52AB2EFF1CBA4F28000F8B29 /* ZEPageControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZEPageControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AB2F021CBA4F28000F8B29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AB2F041CBA4F28000F8B29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,15 +40,6 @@
 		52AB2F091CBA4F28000F8B29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52AB2F0C1CBA4F28000F8B29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52AB2F0E1CBA4F28000F8B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52AB2F161CBA4F4B000F8B29 /* ZEPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEPageViewController.swift; sourceTree = "<group>"; };
-		52AB2F171CBA4F4B000F8B29 /* ZETableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZETableViewController.swift; sourceTree = "<group>"; };
-		52AB2F191CBA4F4B000F8B29 /* ZEMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZEMacro.swift; path = Model/ZEMacro.swift; sourceTree = "<group>"; };
-		52AB2F1A1CBA4F4B000F8B29 /* ZEPageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEPageModel.swift; sourceTree = "<group>"; };
-		52AB2F1C1CBA4F4B000F8B29 /* ZECell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZECell.swift; sourceTree = "<group>"; };
-		52AB2F1D1CBA4F4B000F8B29 /* ZECell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZECell.xib; sourceTree = "<group>"; };
-		52AB2F1E1CBA4F4B000F8B29 /* ZEHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEHeaderView.swift; sourceTree = "<group>"; };
-		52AB2F1F1CBA4F4B000F8B29 /* ZEHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZEHeaderView.xib; sourceTree = "<group>"; };
-		52AB2F201CBA4F4B000F8B29 /* ZEMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZEMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +53,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		524131CE1CBBF73B00D703A6 /* ZEPageView */ = {
+			isa = PBXGroup;
+			children = (
+				524131CF1CBBF73B00D703A6 /* Controller */,
+				524131D21CBBF73B00D703A6 /* Model */,
+				524131D51CBBF73B00D703A6 /* View */,
+			);
+			path = ZEPageView;
+			sourceTree = "<group>";
+		};
+		524131CF1CBBF73B00D703A6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				524131D01CBBF73B00D703A6 /* ZEPageViewController.swift */,
+				524131D11CBBF73B00D703A6 /* ZETableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		524131D21CBBF73B00D703A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				524131D31CBBF73B00D703A6 /* ZEMacro.swift */,
+				524131D41CBBF73B00D703A6 /* ZEPageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		524131D51CBBF73B00D703A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				524131D61CBBF73B00D703A6 /* ZECell.swift */,
+				524131D71CBBF73B00D703A6 /* ZECell.xib */,
+				524131D81CBBF73B00D703A6 /* ZEHeaderView.swift */,
+				524131D91CBBF73B00D703A6 /* ZEHeaderView.xib */,
+				524131DA1CBBF73B00D703A6 /* ZEMenuView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		52AB2EF61CBA4F28000F8B29 = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +112,7 @@
 		52AB2F011CBA4F28000F8B29 /* ZEPageControl */ = {
 			isa = PBXGroup;
 			children = (
-				52AB2F141CBA4F4B000F8B29 /* ZEPage */,
+				524131CE1CBBF73B00D703A6 /* ZEPageView */,
 				52AB2F021CBA4F28000F8B29 /* AppDelegate.swift */,
 				52AB2F041CBA4F28000F8B29 /* ViewController.swift */,
 				52AB2F061CBA4F28000F8B29 /* Main.storyboard */,
@@ -81,47 +121,6 @@
 				52AB2F0E1CBA4F28000F8B29 /* Info.plist */,
 			);
 			path = ZEPageControl;
-			sourceTree = "<group>";
-		};
-		52AB2F141CBA4F4B000F8B29 /* ZEPage */ = {
-			isa = PBXGroup;
-			children = (
-				52AB2F191CBA4F4B000F8B29 /* ZEMacro.swift */,
-				52AB2F151CBA4F4B000F8B29 /* Controller */,
-				52AB2F181CBA4F4B000F8B29 /* Model */,
-				52AB2F1B1CBA4F4B000F8B29 /* View */,
-			);
-			name = ZEPage;
-			path = ZEPageView;
-			sourceTree = "<group>";
-		};
-		52AB2F151CBA4F4B000F8B29 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				52AB2F161CBA4F4B000F8B29 /* ZEPageViewController.swift */,
-				52AB2F171CBA4F4B000F8B29 /* ZETableViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		52AB2F181CBA4F4B000F8B29 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				52AB2F1A1CBA4F4B000F8B29 /* ZEPageModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		52AB2F1B1CBA4F4B000F8B29 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				52AB2F1C1CBA4F4B000F8B29 /* ZECell.swift */,
-				52AB2F1D1CBA4F4B000F8B29 /* ZECell.xib */,
-				52AB2F1E1CBA4F4B000F8B29 /* ZEHeaderView.swift */,
-				52AB2F1F1CBA4F4B000F8B29 /* ZEHeaderView.xib */,
-				52AB2F201CBA4F4B000F8B29 /* ZEMenuView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,9 +183,9 @@
 			files = (
 				52AB2F0D1CBA4F28000F8B29 /* LaunchScreen.storyboard in Resources */,
 				52AB2F0A1CBA4F28000F8B29 /* Assets.xcassets in Resources */,
-				52AB2F261CBA4F4B000F8B29 /* ZECell.xib in Resources */,
+				524131E01CBBF73B00D703A6 /* ZECell.xib in Resources */,
 				52AB2F081CBA4F28000F8B29 /* Main.storyboard in Resources */,
-				52AB2F281CBA4F4B000F8B29 /* ZEHeaderView.xib in Resources */,
+				524131E21CBBF73B00D703A6 /* ZEHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,15 +196,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52AB2F271CBA4F4B000F8B29 /* ZEHeaderView.swift in Sources */,
-				52AB2F221CBA4F4B000F8B29 /* ZETableViewController.swift in Sources */,
+				524131E11CBBF73B00D703A6 /* ZEHeaderView.swift in Sources */,
+				524131DC1CBBF73B00D703A6 /* ZETableViewController.swift in Sources */,
 				52AB2F051CBA4F28000F8B29 /* ViewController.swift in Sources */,
-				52AB2F231CBA4F4B000F8B29 /* ZEMacro.swift in Sources */,
-				52AB2F251CBA4F4B000F8B29 /* ZECell.swift in Sources */,
 				52AB2F031CBA4F28000F8B29 /* AppDelegate.swift in Sources */,
-				52AB2F211CBA4F4B000F8B29 /* ZEPageViewController.swift in Sources */,
-				52AB2F241CBA4F4B000F8B29 /* ZEPageModel.swift in Sources */,
-				52AB2F291CBA4F4B000F8B29 /* ZEMenuView.swift in Sources */,
+				524131DF1CBBF73B00D703A6 /* ZECell.swift in Sources */,
+				524131DD1CBBF73B00D703A6 /* ZEMacro.swift in Sources */,
+				524131DB1CBBF73B00D703A6 /* ZEPageViewController.swift in Sources */,
+				524131DE1CBBF73B00D703A6 /* ZEPageModel.swift in Sources */,
+				524131E31CBBF73B00D703A6 /* ZEMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +354,7 @@
 				52AB2F131CBA4F28000F8B29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

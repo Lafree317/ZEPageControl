@@ -1,10 +1,5 @@
-//
-//  ZEModel.swift
-//  ZEPageView
-//
-//  Created by 胡春源 on 16/3/16.
-//  Copyright © 2016年 胡春源. All rights reserved.
-//
+// 简书:http://www.jianshu.com/p/1523c6bd3253
+// github:https://github.com/Lafree317/ZEPageControl
 
 import UIKit
 
@@ -13,8 +8,8 @@ let kZEScreenWidth = UIScreen.mainScreen().bounds.size.width
 let kZEScreenHight = UIScreen.mainScreen().bounds.size.height
 
 /** header和menu的高度 */
-let kZEHeaderHight:CGFloat = 135
-let kZEMenuHight:CGFloat = 50
+let kZEHeaderHight:CGFloat = 200
+let kZEMenuHight:CGFloat = 40
 let kScrollHorizY = kZEMenuHight+kZEHeaderHight
 
 let kNavigationHight:CGFloat = 64

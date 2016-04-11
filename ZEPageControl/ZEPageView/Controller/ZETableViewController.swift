@@ -1,10 +1,5 @@
-//
-//  ZETableViewController.swift
-//  ZEPageView
-//
-//  Created by 胡春源 on 16/3/16.
-//  Copyright © 2016年 胡春源. All rights reserved.
-//
+// 简书:http://www.jianshu.com/p/1523c6bd3253
+// github:https://github.com/Lafree317/ZEPageControl
 
 import UIKit
 
@@ -20,7 +15,7 @@ class ZETableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         print(tags+"WillAppear")
-        
+       
     }
     
     override func viewWillDisappear(animated: Bool) {
