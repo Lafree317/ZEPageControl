@@ -1,11 +1,45 @@
 # ZEPageControl
 
-![](http://upload-images.jianshu.io/upload_images/1298596-6a298bd98ca1bae8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+#4月12日更新效果:
 
-之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出
+![](http://upload-images.jianshu.io/upload_images/1298596-9a486b32773b67f9.gif?imageMogr2/auto-orient/strip)
+>本次更新主要用alpha控制控制navigation的出现和隐藏,比直接给navigation赋值图片更安全一些,不容易乱.但是目前还有个一些小bug..明天在修复 比如现在的title赋不上值了..等等..
+昨天更新的navigation直接hidden有毒,偏移量会乱,不建议用哪种方式直接隐藏navigation
+这次的难点在于Y值改变时几个数字的计算:
 
 
+```
+            // 基准线 用于当做计算0-1的..被除数..分母...
+            let datumLine = -kZEMenuHight-kNavigationHight + kScrollHorizY
+            // 计算当前的值..除数...分子..
+            let nowY = scrollY + kZEMenuHight+kNavigationHight
+            // 一个0-1的值
+            let nowAlpa = 1+nowY/datumLine
+            // 以0.5为基础 改变字体和状态栏的颜色
+            if nowAlpa > 0.5 {
+                hiddenNav(false)
+            }else{
+                hiddenNav(true)
+                
+            }
+            self.navigationController?.navigationBar.alpha = nowAlpa
+```
+
+#4月11日更新效果:
+![navigation消失](http://upload-images.jianshu.io/upload_images/1298596-e0d2f6bdb88da632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![navigation出现](http://upload-images.jianshu.io/upload_images/1298596-469d3925ed7abd67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+>更改了navigation之上的效果,主要牵扯到一些基数的计算,弄懂这几个数字就可以随意更改这个项目了.
+还有隐藏Navigation和恢复Navigation的时候有很多坑,下一次更新讲解
+之前那版比较像简书主页,这个更像掘金主页
+github:https://github.com/Lafree317/ZEPageControl
+
+
+
+#第一版
+>之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出
 调用时只需要传入一个title数组就好了
+
 ```
     override func viewDidLoad() {
         super.viewDidLoad()
