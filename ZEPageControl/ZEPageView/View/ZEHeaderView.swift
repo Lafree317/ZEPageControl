@@ -1,5 +1,10 @@
-// 简书:http://www.jianshu.com/p/1523c6bd3253
-// github:https://github.com/Lafree317/ZEPageControl
+//
+//  ZEHeaderView.swift
+//  ZEPageView
+//
+//  Created by 胡春源 on 16/3/16.
+//  Copyright © 2016年 胡春源. All rights reserved.
+//
 
 import UIKit
 
@@ -9,11 +14,17 @@ class ZEHeaderView: UIView {
     
     @IBOutlet weak var avatarImageView: UIImageView!
     
-    @IBOutlet weak var goldButton: UIButton!
-    
-    @IBOutlet weak var jianshuButton: UIButton!
-    
-    @IBOutlet weak var githubButton: UIButton!
+
+    @IBAction func buttonClick(sender: UIButton) {
+        if sender.tag == 10086 {
+            print("掘金")
+        }else if sender.tag == 10087 {
+            print("简书")
+        }else if sender.tag == 10088 {
+            print("github")
+        }
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

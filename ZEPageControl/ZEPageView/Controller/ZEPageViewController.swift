@@ -1,5 +1,10 @@
-// 简书:http://www.jianshu.com/p/1523c6bd3253
-// github:https://github.com/Lafree317/ZEPageControl
+//
+//  ZEViewController.swift
+//  ZEPageView
+//
+//  Created by 胡春源 on 16/3/16.
+//  Copyright © 2016年 胡春源. All rights reserved.
+//
 
 import UIKit
 
@@ -13,17 +18,18 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
     var headerView:ZEHeaderView!
     var scrollY:CGFloat = 0
     var scrollX:CGFloat = 0
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.hidden = true
+        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
         layoutBackgroundScrollView()
         layoutHeaderMenuView()
-        
+        hiddenNav(true)
+
     }
     /** 创建底部scrollView,并将tableViewController添加到上面 */
     func layoutBackgroundScrollView(){
@@ -54,6 +60,7 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
         // 需要用到的时候再添加到view上,避免一上来就占用太多资源
         backgroundScrollView?.addSubview(tableViewArr[0].view)
         self.view.addSubview(backgroundScrollView!)
+        
     }
     /** 创建HeaderView和MenuView */
     func layoutHeaderMenuView(){
@@ -74,10 +81,15 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
         case .up:
             menuView.frame.origin.y = kNavigationHight
             headerView.frame.origin.y = -kZEHeaderHight+64
+            self.navigationController?.navigationBar.alpha = 1
+            hiddenNav(false)
+            
             break
         case .buttom:
             headerView.frame.origin.y = 0
             menuView.frame.origin.y = CGRectGetMaxY(headerView.frame)
+            self.navigationController?.navigationBar.alpha = 0
+            hiddenNav(true)
             break
         }
     }
@@ -88,13 +100,11 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
         let seleoffSetY = tableviewScrollY - scrollY
         // 将scrollY的值同步
         scrollY = tableviewScrollY
-        print(scrollY)
+        
         // 偏移量超出Navigation之上
         if scrollY >= -kZEMenuHight-kNavigationHight {
-            self.navigationController?.navigationBar.hidden = false
             headerMenuViewShowType(.up)
         }else if  scrollY <= -kScrollHorizY {
-            self.navigationController?.navigationBar.hidden = true
             // 偏移量超出Navigation之下
             headerMenuViewShowType(.buttom)
         }else{
@@ -102,6 +112,20 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
             // 将headerView的y值按照偏移量更改
             headerView.frame.origin.y -= seleoffSetY
             menuView.frame.origin.y = CGRectGetMaxY(headerView.frame)
+            // 基准线 用于当做计算0-1的..被除数..分母...
+            let datumLine = -kZEMenuHight-kNavigationHight + kScrollHorizY
+            // 计算当前的值..除数...分子..
+            let nowY = scrollY + kZEMenuHight+kNavigationHight
+            // 一个0-1的值
+            let nowAlpa = 1+nowY/datumLine
+            
+            if nowAlpa > 0.5 {
+                hiddenNav(false)
+            }else{
+                hiddenNav(true)
+                
+            }
+            self.navigationController?.navigationBar.alpha = nowAlpa
         }
         
     }
@@ -141,6 +165,32 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+      
+        self.navigationController?.navigationBar.alpha = 0
+    }
+    
+    func hiddenNav(hidden:Bool){
+        
+        if hidden {
+            
+            
+            
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+            
+            UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+
+        }else{
+            
+            
+            
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
+             UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+
+        }
+    }
+
 
     /*
     // MARK: - Navigation

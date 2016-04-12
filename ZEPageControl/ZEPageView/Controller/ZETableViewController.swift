@@ -1,5 +1,10 @@
-// 简书:http://www.jianshu.com/p/1523c6bd3253
-// github:https://github.com/Lafree317/ZEPageControl
+//
+//  ZETableViewController.swift
+//  ZEPageView
+//
+//  Created by 胡春源 on 16/3/16.
+//  Copyright © 2016年 胡春源. All rights reserved.
+//
 
 import UIKit
 
@@ -20,12 +25,12 @@ class ZETableViewController: UITableViewController {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.automaticallyAdjustsScrollViewInsets = false
+//        self.automaticallyAdjustsScrollViewInsets = false
         
         self.tableView.registerNib(UINib.init(nibName: "ZECell", bundle: nil), forCellReuseIdentifier: "ZECell")
     }
