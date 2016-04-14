@@ -208,9 +208,6 @@ func tableViewDidScrollPassY(tableviewScrollY: CGFloat) {
 ```
 >HeaderView和MenuView的具体代码在dem`里看就好了,因为这些都是根据不同需求自己定制的,如果想改造这个项目为己用的话,只需在具体View里改就好了,如果改变高度请在全局属性里更改
 
-#效果图
-![](http://upload-images.jianshu.io/upload_images/1298596-9a486b32773b67f9.gif?imageMogr2/auto-orient/strip)
-
 
 
 
@@ -250,6 +247,11 @@ func tableViewDidScrollPassY(tableviewScrollY: CGFloat) {
 #4月14日更新
 >现在navigation隐藏的时候会有一个白色的title在顶部,navigation的隐藏和恢复显得更自然了
 这个版本是一个比较稳定的版本,下次更新可能会会放出OC版...
+
+
+#效果图
+![](http://upload-images.jianshu.io/upload_images/1298596-9a486b32773b67f9.gif?imageMogr2/auto-orient/strip)
+
 
 
 喜欢的话请点个star 嘿嘿
