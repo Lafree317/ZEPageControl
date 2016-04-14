@@ -1,36 +1,41 @@
-//
-//  ZEViewController.swift
-//  ZEPageView
-//
-//  Created by 胡春源 on 16/3/16.
-//  Copyright © 2016年 胡春源. All rights reserved.
-//
+// 掘金:http://gold.xitu.io/#/user/567bbee434f81a1d8790bd0c
+// 简书"http://www.jianshu.com/p/1523c6bd3253
+// github:https://github.com/Lafree317
 
 import UIKit
 
 class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewControllerDelegate,ZEMenuViewDelegate {
     
-    var titlesArr:Array<String>!
-    var backgroundScrollView:UIScrollView?
-    var tableViewArr:Array<ZETableViewController> = []
-    var showingTableView:UITableView?
-    var menuView:ZEMenuView!
-    var headerView:ZEHeaderView!
-    var scrollY:CGFloat = 0
-    var scrollX:CGFloat = 0
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    var tableViewArr:Array<ZETableViewController> = []// 存放tableView
+    
+    var backgroundScrollView:UIScrollView?// 底部scrollView
+    var menuView:ZEMenuView!// 菜单
+    var headerView:ZEHeaderView!// 展示个人属性的view
+    var topView:ZETopView!// 假TitleView
+    
+    var titlesArr:Array<String>!// 存放菜单的内容
+    var scrollY:CGFloat = 0// 记录当偏移量
+    var scrollX:CGFloat = 0// 记录当偏移量
+    var navigaionTitle: String? // title
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        // didAppear隐藏,不会让整个页面向上移动64
+        self.navigationController?.navigationBar.alpha = 0
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigaionTitle = "轩辕小羽"
         self.automaticallyAdjustsScrollViewInsets = false
+        
         layoutBackgroundScrollView()
         layoutHeaderMenuView()
+        layoutTopView()
         hiddenNav(true)
-
     }
+
     /** 创建底部scrollView,并将tableViewController添加到上面 */
     func layoutBackgroundScrollView(){
         // 需要创建到高度0上,所以backgroundScrollView.y要等于-64
@@ -74,6 +79,20 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
         menuView.delegate = self
         menuView.setUIWithArr(titlesArr)
         self.view.addSubview(self.menuView)
+    }
+    // 搭建假NAvigation...
+    func layoutTopView(){
+        // 创建假Title
+        topView = NSBundle.mainBundle().loadNibNamed("ZETopView", owner: self, options: nil).first as! ZETopView
+        topView.frame = CGRectMake(0,0, kZEScreenWidth, kNavigationHight)
+        self.view.addSubview(topView)
+        
+        // 给title赋值..我也不知道为什么突然只能用这种方式赋值了,需要研究一下
+        self.navigationController?.navigationBar.topItem?.title = navigaionTitle
+        // 给假的title赋值
+        topView.titleLabel.text = navigaionTitle
+        
+        
     }
     /** 因为频繁用到header和menu的固定,所以声明一个方法用于偷懒 */
     func headerMenuViewShowType(showType:headerMenuShowType){
@@ -119,6 +138,7 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
             // 一个0-1的值
             let nowAlpa = 1+nowY/datumLine
             
+            // 以0.5为基础 改变字体和状态栏的颜色
             if nowAlpa > 0.5 {
                 hiddenNav(false)
             }else{
@@ -165,11 +185,7 @@ class ZEPageViewController: UIViewController,UIScrollViewDelegate,ZETableViewCon
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-      
-        self.navigationController?.navigationBar.alpha = 0
-    }
+
     
     func hiddenNav(hidden:Bool){
         
