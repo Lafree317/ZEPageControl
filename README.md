@@ -1,41 +1,3 @@
-# ZEPageControl
-
-#4月12日更新效果:
-
-![](http://upload-images.jianshu.io/upload_images/1298596-9a486b32773b67f9.gif?imageMogr2/auto-orient/strip)
->本次更新主要用alpha控制控制navigation的出现和隐藏,比直接给navigation赋值图片更安全一些,不容易乱.但是目前还有个一些小bug..明天在修复 比如现在的title赋不上值了..等等..
-昨天更新的navigation直接hidden有毒,偏移量会乱,不建议用哪种方式直接隐藏navigation
-这次的难点在于Y值改变时几个数字的计算:
-
-
-```
-            // 基准线 用于当做计算0-1的..被除数..分母...
-            let datumLine = -kZEMenuHight-kNavigationHight + kScrollHorizY
-            // 计算当前的值..除数...分子..
-            let nowY = scrollY + kZEMenuHight+kNavigationHight
-            // 一个0-1的值
-            let nowAlpa = 1+nowY/datumLine
-            // 以0.5为基础 改变字体和状态栏的颜色
-            if nowAlpa > 0.5 {
-                hiddenNav(false)
-            }else{
-                hiddenNav(true)
-                
-            }
-            self.navigationController?.navigationBar.alpha = nowAlpa
-```
-
-#4月11日更新效果:
-![navigation消失](http://upload-images.jianshu.io/upload_images/1298596-e0d2f6bdb88da632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![navigation出现](http://upload-images.jianshu.io/upload_images/1298596-469d3925ed7abd67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
->更改了navigation之上的效果,主要牵扯到一些基数的计算,弄懂这几个数字就可以随意更改这个项目了.
-还有隐藏Navigation和恢复Navigation的时候有很多坑,下一次更新讲解
-之前那版比较像简书主页,这个更像掘金主页
-github:https://github.com/Lafree317/ZEPageControl
-
-
-
 #第一版
 >之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出
 调用时只需要传入一个title数组就好了
@@ -52,14 +14,17 @@ github:https://github.com/Lafree317/ZEPageControl
 ```
 
 #原理
-这个项目的层级视图是这样的
+>这个项目的层级视图是这样的
+
 ![](http://upload-images.jianshu.io/upload_images/1298596-1a75086cb4e4c3c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-难点主要在于计算三个`tableViewController`的`contentInset`和`contentOffset`
-先在底部创建一个和`viewController.view`一样大的`scrollView`
+
+>先在底部创建一个和`viewController.view`一样大的`scrollView`
 然后将`tableviewController`添加上去
 最后将`tableviewController.tableView.contentInset`的`top`设置为你想要的高度(headerView+menuView)
 然后通过代理将`tableviewController`的偏移量代理到主控制器上,用于计算顶部`headerView`和`menuView`的移动
 然后主控制器的`scrollview`代理方法被调用时计算`tableviewcontroller.contentOffset`
+难点主要在于计算三个`tableViewController`的`contentInset`和`contentOffset`
+
 
 #代码
 ####先看一眼全局属性
@@ -243,8 +208,51 @@ func tableViewDidScrollPassY(tableviewScrollY: CGFloat) {
 ```
 >HeaderView和MenuView的具体代码在dem`里看就好了,因为这些都是根据不同需求自己定制的,如果想改造这个项目为己用的话,只需在具体View里改就好了,如果改变高度请在全局属性里更改
 
+
+
+
+#更新
+
+#4月12日更新效果:
+>本次更新主要用alpha控制控制navigation的出现和隐藏,比直接给navigation赋值图片更安全一些,不容易乱.但是目前还有个一些小bug..明天在修复 比如现在的title赋不上值了..等等..
+昨天更新的navigation直接hidden有毒,偏移量会乱,不建议用哪种方式直接隐藏navigation
+这次的难点在于Y值改变时几个数字的计算:
+
+
+```
+            // 基准线 用于当做计算0-1的..被除数..分母...
+            let datumLine = -kZEMenuHight-kNavigationHight + kScrollHorizY
+            // 计算当前的值..除数...分子..
+            let nowY = scrollY + kZEMenuHight+kNavigationHight
+            // 一个0-1的值
+            let nowAlpa = 1+nowY/datumLine
+            // 以0.5为基础 改变字体和状态栏的颜色
+            if nowAlpa > 0.5 {
+                hiddenNav(false)
+            }else{
+                hiddenNav(true)
+                
+            }
+            self.navigationController?.navigationBar.alpha = nowAlpa
+```
+
+#4月11日更新效果:
+![navigation消失](http://upload-images.jianshu.io/upload_images/1298596-e0d2f6bdb88da632.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![navigation出现](http://upload-images.jianshu.io/upload_images/1298596-469d3925ed7abd67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+>更改了navigation之上的效果,主要牵扯到一些基数的计算,弄懂这几个数字就可以随意更改这个项目了.
+还有隐藏Navigation和恢复Navigation的时候有很多坑,下一次更新讲解
+之前那版比较像简书主页,这个更像掘金主页
+
+#4月14日更新
+>现在navigation隐藏的时候会有一个白色的title在顶部,navigation的隐藏和恢复显得更自然了
+这个版本是一个比较稳定的版本,下次更新可能会会放出OC版...
+
+
 #效果图
-![](http://upload-images.jianshu.io/upload_images/1298596-58178431aea6216c.gif?imageMogr2/auto-orient/strip)
+![](http://upload-images.jianshu.io/upload_images/1298596-9a486b32773b67f9.gif?imageMogr2/auto-orient/strip)
 
 
 
+喜欢的话请点个star 嘿嘿
+宣传一下我们公司的app 掘金 一个优质技术分享平台
