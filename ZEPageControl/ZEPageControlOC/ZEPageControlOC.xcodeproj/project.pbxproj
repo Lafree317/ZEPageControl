@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5215D2501CDE2937004F5D0E /* ZERootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215D24F1CDE2937004F5D0E /* ZERootViewController.m */; };
+		5215D2531CDE2947004F5D0E /* ZETableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215D2521CDE2947004F5D0E /* ZETableViewController.m */; };
+		5215D2561CDE2954004F5D0E /* ZEModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215D2551CDE2954004F5D0E /* ZEModel.m */; };
+		5215D25A1CDE296A004F5D0E /* ZECell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215D2581CDE296A004F5D0E /* ZECell.m */; };
+		5215D25B1CDE296A004F5D0E /* ZECell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5215D2591CDE296A004F5D0E /* ZECell.xib */; };
+		5215D25E1CDE2988004F5D0E /* ZEHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215D25D1CDE2988004F5D0E /* ZEHeaderView.m */; };
+		5215D2601CDE299F004F5D0E /* ZEHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5215D25F1CDE299F004F5D0E /* ZEHeaderView.xib */; };
+		5215D2631CDE29D8004F5D0E /* ZETopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215D2621CDE29D8004F5D0E /* ZETopView.m */; };
+		5215D2651CDE29E3004F5D0E /* ZETopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5215D2641CDE29E3004F5D0E /* ZETopView.xib */; };
+		52B15B701CEDCDE3005090F3 /* ZEButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B15B6F1CEDCDE3005090F3 /* ZEButton.m */; };
+		52B15B731CEDCDEE005090F3 /* ZEMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B15B721CEDCDEE005090F3 /* ZEMenuView.m */; };
+		52B15B761CEDCE6B005090F3 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B15B751CEDCE6B005090F3 /* UIView+Extension.m */; };
+		52BE8B8B1CDE274700D4AF33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BE8B8A1CDE274700D4AF33 /* main.m */; };
+		52BE8B8E1CDE274700D4AF33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BE8B8D1CDE274700D4AF33 /* AppDelegate.m */; };
+		52BE8B911CDE274700D4AF33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BE8B901CDE274700D4AF33 /* ViewController.m */; };
+		52BE8B941CDE274700D4AF33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BE8B921CDE274700D4AF33 /* Main.storyboard */; };
+		52BE8B961CDE274700D4AF33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BE8B951CDE274700D4AF33 /* Assets.xcassets */; };
+		52BE8B991CDE274700D4AF33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BE8B971CDE274700D4AF33 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5215D24E1CDE2937004F5D0E /* ZERootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZERootViewController.h; sourceTree = "<group>"; };
+		5215D24F1CDE2937004F5D0E /* ZERootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZERootViewController.m; sourceTree = "<group>"; };
+		5215D2511CDE2947004F5D0E /* ZETableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETableViewController.h; sourceTree = "<group>"; };
+		5215D2521CDE2947004F5D0E /* ZETableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETableViewController.m; sourceTree = "<group>"; };
+		5215D2541CDE2954004F5D0E /* ZEModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZEModel.h; sourceTree = "<group>"; };
+		5215D2551CDE2954004F5D0E /* ZEModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZEModel.m; sourceTree = "<group>"; };
+		5215D2571CDE296A004F5D0E /* ZECell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZECell.h; sourceTree = "<group>"; };
+		5215D2581CDE296A004F5D0E /* ZECell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZECell.m; sourceTree = "<group>"; };
+		5215D2591CDE296A004F5D0E /* ZECell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZECell.xib; sourceTree = "<group>"; };
+		5215D25C1CDE2988004F5D0E /* ZEHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZEHeaderView.h; sourceTree = "<group>"; };
+		5215D25D1CDE2988004F5D0E /* ZEHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZEHeaderView.m; sourceTree = "<group>"; };
+		5215D25F1CDE299F004F5D0E /* ZEHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZEHeaderView.xib; sourceTree = "<group>"; };
+		5215D2611CDE29D8004F5D0E /* ZETopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZETopView.h; sourceTree = "<group>"; };
+		5215D2621CDE29D8004F5D0E /* ZETopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZETopView.m; sourceTree = "<group>"; };
+		5215D2641CDE29E3004F5D0E /* ZETopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZETopView.xib; sourceTree = "<group>"; };
+		526F34101CEDC351002E0F0A /* ZEHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZEHeader.h; path = ../ZEHeader.h; sourceTree = "<group>"; };
+		52B15B6E1CEDCDE3005090F3 /* ZEButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZEButton.h; sourceTree = "<group>"; };
+		52B15B6F1CEDCDE3005090F3 /* ZEButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZEButton.m; sourceTree = "<group>"; };
+		52B15B711CEDCDEE005090F3 /* ZEMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZEMenuView.h; sourceTree = "<group>"; };
+		52B15B721CEDCDEE005090F3 /* ZEMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZEMenuView.m; sourceTree = "<group>"; };
+		52B15B741CEDCE6B005090F3 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		52B15B751CEDCE6B005090F3 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		52BE8B861CDE274700D4AF33 /* ZEPageControlOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZEPageControlOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52BE8B8A1CDE274700D4AF33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		52BE8B8C1CDE274700D4AF33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		52BE8B8D1CDE274700D4AF33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		52BE8B8F1CDE274700D4AF33 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		52BE8B901CDE274700D4AF33 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		52BE8B931CDE274700D4AF33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52BE8B951CDE274700D4AF33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52BE8B981CDE274700D4AF33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52BE8B9A1CDE274700D4AF33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52BE8B831CDE274700D4AF33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5215D24A1CDE291D004F5D0E /* ZEPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				5215D24B1CDE291D004F5D0E /* Controller */,
+				5215D24C1CDE291D004F5D0E /* Model */,
+				5215D24D1CDE291D004F5D0E /* View */,
+			);
+			path = ZEPageControl;
+			sourceTree = "<group>";
+		};
+		5215D24B1CDE291D004F5D0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5215D24E1CDE2937004F5D0E /* ZERootViewController.h */,
+				5215D24F1CDE2937004F5D0E /* ZERootViewController.m */,
+				5215D2511CDE2947004F5D0E /* ZETableViewController.h */,
+				5215D2521CDE2947004F5D0E /* ZETableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5215D24C1CDE291D004F5D0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				526F34101CEDC351002E0F0A /* ZEHeader.h */,
+				5215D2541CDE2954004F5D0E /* ZEModel.h */,
+				5215D2551CDE2954004F5D0E /* ZEModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5215D24D1CDE291D004F5D0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52B15B741CEDCE6B005090F3 /* UIView+Extension.h */,
+				52B15B751CEDCE6B005090F3 /* UIView+Extension.m */,
+				52B15B711CEDCDEE005090F3 /* ZEMenuView.h */,
+				52B15B721CEDCDEE005090F3 /* ZEMenuView.m */,
+				5215D2571CDE296A004F5D0E /* ZECell.h */,
+				5215D2581CDE296A004F5D0E /* ZECell.m */,
+				5215D2591CDE296A004F5D0E /* ZECell.xib */,
+				5215D25C1CDE2988004F5D0E /* ZEHeaderView.h */,
+				5215D25D1CDE2988004F5D0E /* ZEHeaderView.m */,
+				5215D25F1CDE299F004F5D0E /* ZEHeaderView.xib */,
+				5215D2611CDE29D8004F5D0E /* ZETopView.h */,
+				5215D2621CDE29D8004F5D0E /* ZETopView.m */,
+				5215D2641CDE29E3004F5D0E /* ZETopView.xib */,
+				52B15B6E1CEDCDE3005090F3 /* ZEButton.h */,
+				52B15B6F1CEDCDE3005090F3 /* ZEButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52BE8B7D1CDE274700D4AF33 = {
+			isa = PBXGroup;
+			children = (
+				52BE8B881CDE274700D4AF33 /* ZEPageControlOC */,
+				52BE8B871CDE274700D4AF33 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52BE8B871CDE274700D4AF33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52BE8B861CDE274700D4AF33 /* ZEPageControlOC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52BE8B881CDE274700D4AF33 /* ZEPageControlOC */ = {
+			isa = PBXGroup;
+			children = (
+				5215D24A1CDE291D004F5D0E /* ZEPageControl */,
+				52BE8B8C1CDE274700D4AF33 /* AppDelegate.h */,
+				52BE8B8D1CDE274700D4AF33 /* AppDelegate.m */,
+				52BE8B8F1CDE274700D4AF33 /* ViewController.h */,
+				52BE8B901CDE274700D4AF33 /* ViewController.m */,
+				52BE8B921CDE274700D4AF33 /* Main.storyboard */,
+				52BE8B951CDE274700D4AF33 /* Assets.xcassets */,
+				52BE8B971CDE274700D4AF33 /* LaunchScreen.storyboard */,
+				52BE8B9A1CDE274700D4AF33 /* Info.plist */,
+				52BE8B891CDE274700D4AF33 /* Supporting Files */,
+			);
+			path = ZEPageControlOC;
+			sourceTree = "<group>";
+		};
+		52BE8B891CDE274700D4AF33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52BE8B8A1CDE274700D4AF33 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52BE8B851CDE274700D4AF33 /* ZEPageControlOC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52BE8B9D1CDE274700D4AF33 /* Build configuration list for PBXNativeTarget "ZEPageControlOC" */;
+			buildPhases = (
+				52BE8B821CDE274700D4AF33 /* Sources */,
+				52BE8B831CDE274700D4AF33 /* Frameworks */,
+				52BE8B841CDE274700D4AF33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZEPageControlOC;
+			productName = ZEPageControlOC;
+			productReference = 52BE8B861CDE274700D4AF33 /* ZEPageControlOC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52BE8B7E1CDE274700D4AF33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "胡春源";
+				TargetAttributes = {
+					52BE8B851CDE274700D4AF33 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2732FJ5DK9;
+					};
+				};
+			};
+			buildConfigurationList = 52BE8B811CDE274700D4AF33 /* Build configuration list for PBXProject "ZEPageControlOC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52BE8B7D1CDE274700D4AF33;
+			productRefGroup = 52BE8B871CDE274700D4AF33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52BE8B851CDE274700D4AF33 /* ZEPageControlOC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52BE8B841CDE274700D4AF33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52BE8B991CDE274700D4AF33 /* LaunchScreen.storyboard in Resources */,
+				52BE8B961CDE274700D4AF33 /* Assets.xcassets in Resources */,
+				5215D25B1CDE296A004F5D0E /* ZECell.xib in Resources */,
+				5215D2651CDE29E3004F5D0E /* ZETopView.xib in Resources */,
+				52BE8B941CDE274700D4AF33 /* Main.storyboard in Resources */,
+				5215D2601CDE299F004F5D0E /* ZEHeaderView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52BE8B821CDE274700D4AF33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5215D2561CDE2954004F5D0E /* ZEModel.m in Sources */,
+				52BE8B911CDE274700D4AF33 /* ViewController.m in Sources */,
+				52BE8B8E1CDE274700D4AF33 /* AppDelegate.m in Sources */,
+				52B15B701CEDCDE3005090F3 /* ZEButton.m in Sources */,
+				5215D2531CDE2947004F5D0E /* ZETableViewController.m in Sources */,
+				5215D2631CDE29D8004F5D0E /* ZETopView.m in Sources */,
+				52B15B761CEDCE6B005090F3 /* UIView+Extension.m in Sources */,
+				52B15B731CEDCDEE005090F3 /* ZEMenuView.m in Sources */,
+				5215D25E1CDE2988004F5D0E /* ZEHeaderView.m in Sources */,
+				5215D25A1CDE296A004F5D0E /* ZECell.m in Sources */,
+				52BE8B8B1CDE274700D4AF33 /* main.m in Sources */,
+				5215D2501CDE2937004F5D0E /* ZERootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		52BE8B921CDE274700D4AF33 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52BE8B931CDE274700D4AF33 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52BE8B971CDE274700D4AF33 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52BE8B981CDE274700D4AF33 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52BE8B9B1CDE274700D4AF33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		52BE8B9C1CDE274700D4AF33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52BE8B9E1CDE274700D4AF33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2732FJ5DK9;
+				INFOPLIST_FILE = ZEPageControlOC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lafree.www.ZEPageControlOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		52BE8B9F1CDE274700D4AF33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2732FJ5DK9;
+				INFOPLIST_FILE = ZEPageControlOC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lafree.www.ZEPageControlOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52BE8B811CDE274700D4AF33 /* Build configuration list for PBXProject "ZEPageControlOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52BE8B9B1CDE274700D4AF33 /* Debug */,
+				52BE8B9C1CDE274700D4AF33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52BE8B9D1CDE274700D4AF33 /* Build configuration list for PBXNativeTarget "ZEPageControlOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52BE8B9E1CDE274700D4AF33 /* Debug */,
+				52BE8B9F1CDE274700D4AF33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52BE8B7E1CDE274700D4AF33 /* Project object */;
+}
