@@ -1,4 +1,4 @@
-#OC版请看这里 https://github.com/wangmchn/WMPageController 破千Star的PageControl,比我写的好
+OC版请看这里 https://github.com/wangmchn/WMPageController 破千Star的PageControl,比我写的好
 #第一版
 >之前公司做了一个类似于知乎小圆桌的页面,但是写完一直感觉有些地方不够好,所以就拿Swift重新写了一遍,如果有不足的地方欢迎大家指出
 调用时只需要传入一个title数组就好了
